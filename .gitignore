@@ -1,0 +1,15 @@
+# Node
+node_modules/
+dist/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets & local data
+.env
+*.db
+*.sqlite3
+test_output*
