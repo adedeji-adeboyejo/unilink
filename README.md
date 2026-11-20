@@ -8,8 +8,6 @@ Built by Sriram Pragalathan and Adedeji Adeboyejo (me).
 UniLink is a course registration system for a university. Students search for sections, register, drop and see their weekly timetable. Instructors see the sections they teach and their class lists. Administrators manage students, instructors, courses, sections and enrollments, and run enrollment reports.
 
 ## Tech stack
- 
-## Tech stack
 - **Database:** PostgreSQL with the `pgcrypto` extension (for bcrypt password hashes)
 - **Backend:** Python 3.10+, FastAPI, Uvicorn, psycopg 3
 - **Frontend:** React 18 and Vite 5
@@ -30,7 +28,6 @@ The business rules live in the database. Registering and dropping go through sto
 - A room or instructor can't be booked at overlapping times in the same term.
 - Capacity can't be set below the number of students already enrolled.
 - Students can't register or drop after the term's add/drop deadline; an admin can.
-
 
 
 ## Getting started
@@ -105,8 +102,10 @@ Every demo account uses the password `password123`. A username is the part of th
 | `Enrollment` | Which student is in which section: Enrolled, Waitlisted, Dropped or Completed, with grade |
 | `UserAccount` | Login, role and bcrypt password hash for each user |
 
+
 **Stored procedures:** `sp_register_student` and `sp_drop_course`.
 **Triggers:** `trg_prevent_over_enrollment`, `trg_reopen_section`, `trg_no_double_booking` and `trg_capacity_not_below_enrolled`.
+
 
 To run the sample queries and requirement scenarios directly in PostgreSQL:
 
@@ -115,6 +114,7 @@ cd backend/database
 psql -d unilink -f 4_queries.sql
 psql -d unilink -f 5_test_scenarios.sql
 ```
+
 
 ## Notes
 
